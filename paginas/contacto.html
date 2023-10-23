@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <script defer src="https://kit.fontawesome.com/94c0117dd6.js" crossorigin="anonymous"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&family=Raleway&display=swap" rel="stylesheet">
+   
+   
+ 
+    <link rel="stylesheet" href="../css/style.css">
+ 
+    <link rel="shortcut icon" href="../imagenes/icono.jpg" type="image/x-icon">
+    <title>Contacto | Tienda Virtual</title>
+</head>
+<body>
+    <header>
+        <a href="../index.html"><img src="../imagenes/icono.jpg" alt="TV"></a>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a href="../index.html"><h1>Tienda Virtual</h1></a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="../paginas/nosotros.html">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../paginas/productos.html">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../paginas/contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+  
+
+        <div class="seccion-introductora">
+            <h2>Dejanos tu mensaje</h2>
+            <p><b>Nos pondremos en contacto a la brevedad</b> </p>
+        </div>
+
+        <form class="mi-formulario" onsubmit="return validar()" id="frm">
+        <label  for="f_nombre">Nombre </label>
+        <input  id="f_nombre" name="f_nombre" />
+        <label  for="f_mail">Mail </label>
+        <input id="f_mail" name="f_mail" />
+        <label  for="f_tel">Telefono</label>
+        <input  id="f_tel" name="f_tel" />
+        <button type="submit" id="btnvalidar">
+            Validar
+        </button>
+    </form>
+    <p id="psaludo"></p>
+<ul id="ltaErrores">
+</ul>
+    <script>
+        const psaludo = document.getElementById("psaludo");
+        const ltaErrores = document.getElementById("ltaErrores");
+        function validar() {
+            let f_nombre = document.getElementById("f_nombre");
+            let Nombre = f_nombre.value.trim();
+            let f_mail = document.getElementById("f_mail");
+            let Mail = f_mail.value.trim();
+            let f_tel = document.getElementById("f_tel");
+            let Telefono = f_tel.value.trim();
+            let errores = [];
+            let campo_error = null;
+            let frm = document.getElementById("frm");
+
+            for (v of frm.children) {
+                v.classList.remove("error");
+    }
+            
+                if (Nombre == "" || Nombre.length > 9) {
+                    errores.push("campo nombre incorrecto");
+                    campo_error = f_nombre;
+                    f_nombre.classList.add("error");
+                }
+                if (Mail == "" || Mail.length > 20) {
+                    errores.push("campo correo electronico incorrecto");
+                    campo_error = f_mail;
+                    f_mail.classList.add("error");
+                }
+                if (Telefono == "" ||isNaN(Telefono) || parseInt(Telefono).toString().length != 10) {
+                    errores.push("campo Telefono incorrecto");
+                    campo_error = f_tel;
+                    f_tel.classList.add("error");
+
+                }
+         ltaErrores.innerHTML = "";
+        if (errores.length>0){
+        for(let i=0;i<errores.length;i++){
+        let li = document.createElement("li");
+        li.innerHTML = errores[i];
+        ltaErrores.appendChild(li);
+
+
+      }  
+      if (campo_error != null){
+        campo_error.focus();
+                }
+                return false;
+            }
+    let mje = `Hola ${Nombre}, Gracias por comunicarte con nosotros, en instantes un asesor se comunicara con vos!`;
+  psaludo.innerHTML = mje;
+  return false;  
+        }
+    </script>
+
+    </main>
+
+    <footer>
+        <div>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+        </div>
+        <p>Tienda Virtual / Juana Koslay / San Luis / Argentina </p>
+        <p>Sitio web creado por Mauro Benito</p>
+    </footer>
+
+   
+</body>
+</html>
