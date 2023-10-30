@@ -20,8 +20,9 @@ h4 {
 h1 {
     color: #f7ebeb;
     font-size: 1.5em;
-    font-weight: bold;
-    margin: 0 20px;
+    font-weight:bolder;
+    margin: 0 30px;
+    text-align: left;
 }
 
 h2 {
@@ -62,6 +63,7 @@ header {
     background-color: #212529;
     color: white;
     min-height: 11vh;
+    
 }
 
 header img {
@@ -86,7 +88,10 @@ ul {
 
 ul li {
     list-style-type: none;
-    font-size: 1.2em;
+    font-size: 1.5em;
+    display: inline;
+    margin: auto 10px ;
+    
 }
 
 .btn-info{
@@ -108,7 +113,7 @@ ul li {
     color: #019267;
 }
 
-/* Footer */
+
 
 footer {
     display: flex;
@@ -120,7 +125,7 @@ footer {
     font-weight: bold;
 }
 
-/* Index*/
+
 
 main.index {
     min-height: 89vh;
@@ -275,67 +280,11 @@ textarea[name="msj"] {
 
 
 
-@media (max-width: 730px) {
-    
-    .nosotros{
-        width: 40%;
-    }
-
-    .seccion-detalles{
-        flex-direction: column;
-        align-items: right;
-        justify-content:right;
-        min-height: 70vh;
-        width: 90%;
-    }
-
-    .seccion-detalles__img{
-        width: 70%;
-    }
-
-    footer.index{
-        width: 100%;
-        min-height: 0;
-        position: inherit;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        padding: 10px;
-        background-color: #ECEDE8;
-    }
-
-    main.index{
-        min-height: 0;
-    }
-}
 
 
 
-@media (max-width: 530px) {
 
-    h2{
-        font-size: 1.5em;
-    }
 
-    .index h2{
-        font-size: 1.4em;
-    }
-
-    .nosotros{
-        width: 90%;
-    }
-   
-    .seccion-introductora p{
-        margin: 30px 0;
-    }
-
-    .producto__card {
-        max-width: none;
-        min-width: none;
-        width: 75%;
-    }
-
-}
 
 .carousel {
   width: 800px;
@@ -352,24 +301,7 @@ textarea[name="msj"] {
     background-size: cover;
 }
 
-@media (max-width: 450px) {
 
-    h1{
-        font-size: 1em;
-        margin: 0 10px;
-    }
-
-    
-
-    .send-form {
-        width: 100px;
-        margin: 10px auto;
-    }
-
-    .mi-formulario {
-        padding: 3% 10%;
-        width: 90%;
-    }
 
     .seccion-introductora__btn{
         display: flex;
@@ -382,4 +314,3 @@ textarea[name="msj"] {
     }
    
    
-}
